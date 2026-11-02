@@ -77,17 +77,18 @@
            HEADER
         ========================= */
 
-        header {
-            background: var(--surface);
-            padding: 10px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-        }
+       header {
+    background: var(--surface);
+    padding: 8px 8%;
+    min-height: 105px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
 
 .logo {
     display: flex;
@@ -96,8 +97,9 @@
 }
 
 .logo-image {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
+    max-width: none;
     object-fit: contain;
     display: block;
 }
