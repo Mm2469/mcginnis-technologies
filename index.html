@@ -1,263 +1,935 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BluePeak Technologies builds innovative software and digital solutions for businesses and individuals.">
-<title>BluePeak Technologies | Innovative Digital Solutions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-scroll-behavior: smooth;
-}
+    <meta name="description" content="BluePeak Technologies creates innovative software products and digital solutions that help businesses work smarter.">
 
-body {
-font-family: Arial, sans-serif;
-background: #08111f;
-color: #ffffff;
-line-height: 1.6;
-}
+    <meta name="theme-color" content="#08111f">
 
-header {
-background: #0d1b2e;
-padding: 20px 8%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-}
+    <meta property="og:title" content="BluePeak Technologies">
+    <meta property="og:description" content="Innovative software. Higher possibilities.">
+    <meta property="og:type" content="website">
 
-.logo {
-color: #39a9ff;
-font-size: 25px;
-font-weight: bold;
-}
+    <title>BluePeak Technologies | Software That Moves Business Forward</title>
 
-nav a {
-color: white;
-text-decoration: none;
-margin-left: 22px;
-font-size: 14px;
-}
+    <style>
+        /* =========================
+           GLOBAL STYLES
+        ========================= */
 
-nav a:hover {
-color: #39a9ff;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-.hero {
-min-height: 520px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 80px 20px;
-background: linear-gradient(135deg, #08111f, #123b68);
-}
+        :root {
+            --background: #08111f;
+            --surface: #0d1b2e;
+            --card: #11243a;
+            --blue: #39a9ff;
+            --blue-dark: #1688e8;
+            --white: #ffffff;
+            --muted: #c7d6e8;
+            --border: #234566;
+        }
 
-.hero h1 {
-font-size: clamp(36px, 6vw, 58px);
-margin-bottom: 20px;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--white);
+            line-height: 1.7;
+        }
 
-.hero h1 span {
-color: #39a9ff;
-}
+        a {
+            color: inherit;
+        }
 
-.hero p {
-max-width: 650px;
-color: #c7d6e8;
-font-size: 18px;
-margin-bottom: 30px;
-}
+        .container {
+            width: 84%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.button {
-display: inline-block;
-background: #1688e8;
-color: white;
-padding: 13px 28px;
-border-radius: 6px;
-text-decoration: none;
-font-weight: bold;
-}
+        .section {
+            padding: 85px 0;
+        }
 
-.button:hover {
-background: #0865b5;
-}
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            color: var(--blue);
+            margin-bottom: 15px;
+        }
 
-section {
-padding: 75px 8%;
-text-align: center;
-}
+        .section-description {
+            text-align: center;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
 
-section h2 {
-font-size: 32px;
-margin-bottom: 20px;
-color: #39a9ff;
-}
+        /* =========================
+           HEADER
+        ========================= */
 
-.intro {
-max-width: 750px;
-margin: auto;
-color: #c7d6e8;
-}
+        header {
+            background: var(--surface);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
 
-.cards {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 22px;
-margin-top: 40px;
-}
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--blue);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
 
-.card {
-background: #11243a;
-padding: 30px 22px;
-border-radius: 10px;
-border: 1px solid #234566;
-}
+        .logo span {
+            color: white;
+        }
 
-.card h3 {
-color: #39a9ff;
-margin-bottom: 12px;
-}
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-.card p {
-color: #c7d6e8;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-.contact {
-background: #0d1b2e;
-}
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--blue);
+        }
 
-footer {
-background: #050b14;
-padding: 25px;
-text-align: center;
-color: #a9bad0;
-font-size: 14px;
-}
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
 
-@media (max-width: 600px) {
-header {
-flex-direction: column;
-gap: 15px;
-}
+        /* =========================
+           HERO
+        ========================= */
 
-nav a {
-margin: 0 7px;
-}
-}
-</style>
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background:
+                radial-gradient(circle at top right,
+                #174d7d 0%, transparent 45%),
+                linear-gradient(135deg, #08111f, #123b68);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: var(--blue);
+            border: 1px solid var(--border);
+            padding: 7px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto auto 35px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--blue-dark);
+            color: white;
+            padding: 13px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .button:hover {
+            background: #0865b5;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            background: transparent;
+            border-color: var(--blue);
+            margin-left: 10px;
+        }
+
+        .button-outline:hover {
+            background: var(--blue-dark);
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* =========================
+           VALUES
+        ========================= */
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: var(--card);
+            padding: 28px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .value-card h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .value-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            background: var(--surface);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue);
+        }
+
+        .product-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            color: var(--blue);
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .product-status {
+            display: inline-block;
+            color: #77dba0;
+            background: #123a30;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           PRICING
+        ========================= */
+
+        .pricing-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            max-width: 650px;
+            margin: auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .pricing-card h3 {
+            color: var(--blue);
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           SUPPORT
+        ========================= */
+
+        .support {
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .support-content {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .support-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-content p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #050b14;
+            padding: 35px 8%;
+            text-align: center;
+            color: #a9bad0;
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            color: var(--blue);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin: 18px 0;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        /* =========================
+           ACCESSIBILITY
+        ========================= */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 4px;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVENESS
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 16px 6%;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--surface);
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 25px;
+                border-top: 1px solid var(--border);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 520px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .button-outline {
+                margin: 12px 0 0;
+            }
+
+            .pricing-card {
+                padding: 28px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">BLUEPEAK TECHNOLOGIES</div>
+    <!-- HEADER -->
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <header>
 
-<main>
+        <a href="#home" class="logo">
+            BLUEPEAK <span>TECHNOLOGIES</span>
+        </a>
 
-<section class="hero" id="home">
-<h1>Innovative Solutions.<br><span>Higher Possibilities.</span></h1>
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
+            ☰
+        </button>
 
-<p>
-Welcome to BluePeak Technologies.
-We develop practical software and digital solutions
-designed to help businesses and individuals move forward.
-</p>
+        <nav id="mainNav">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#products">Our Products</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#support">Support</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<a href="#services" class="button">Explore What We Do</a>
-</section>
+    </header>
 
-<section id="about">
-<h2>About BluePeak</h2>
 
-<p class="intro">
-BluePeak Technologies is a growing software and digital
-solutions company focused on creating accessible,
-reliable, and innovative technology. Our mission is to
-make everyday tasks easier through useful digital products.
-</p>
-</section>
+    <main>
 
-<section id="services">
-<h2>Our Services</h2>
+        <!-- HERO SECTION -->
 
-<p class="intro">
-We focus on developing technology that solves real problems.
-</p>
+        <section class="hero" id="home">
 
-<div class="cards">
-<div class="card">
-<h3>Software Development</h3>
-<p>Practical software applications designed around everyday needs.</p>
-</div>
+            <div class="hero-content">
 
-<div class="card">
-<h3>Website Development</h3>
-<p>Professional and responsive websites for businesses and individuals.</p>
-</div>
+                <div class="hero-label">
+                    SOFTWARE BUILT FOR PROGRESS
+                </div>
 
-<div class="card">
-<h3>Digital Solutions</h3>
-<p>Useful digital tools that simplify everyday work and organization.</p>
-</div>
-</div>
-</section>
+                <h1>
+                    Innovative Software.
+                    <span>Higher Possibilities.</span>
+                </h1>
 
-<section id="products">
-<h2>Our Products</h2>
+                <p>
+                    Welcome to BluePeak Technologies.
+                    We develop practical, reliable, and innovative
+                    software products designed to help businesses
+                    and individuals work smarter.
+                </p>
 
-<div class="cards">
-<div class="card">
-<h3>Quick Quote</h3>
-<p>
-A simple quote and invoice generator
-designed to help small businesses create professional documents.
-</p>
-<p style="margin-top:15px;">
-<strong>Available Now</strong>
-</p>
-</div>
+                <a href="#products" class="button">
+                    Explore Our Products
+                </a>
 
-<div class="card">
-<h3>Coming Soon</h3>
-<p>More software and digital products are in development.</p>
-</div>
-</div>
-</section>
+                <a href="#about" class="button button-outline">
+                    Discover BluePeak
+                </a>
 
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
+            </div>
 
-<p class="intro">
-Interested in working with BluePeak Technologies?
-We look forward to connecting with you.
-</p>
+        </section>
 
-<p style="margin-top:20px;">
-Email: Contact information coming soon.
-</p>
-</section>
 
-</main>
+        <!-- ABOUT SECTION -->
 
-<footer>
-<p>&copy; 2026 BluePeak Technologies. All Rights Reserved.</p>
-<p>Innovative Solutions. Higher Possibilities.</p>
-</footer>
+        <section class="section about" id="about">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    About BluePeak Technologies
+                </h2>
+
+                <p class="about-content">
+                    BluePeak Technologies is a software company
+                    focused on developing and delivering innovative
+                    digital products.
+
+                    Our goal is to create practical technology
+                    that simplifies everyday tasks, improves
+                    productivity, and helps businesses move forward.
+
+                    We believe great software should be accessible,
+                    reliable, and designed around real-world needs.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPANY VALUES -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    What Drives Us
+                </h2>
+
+                <p class="section-description">
+                    Our commitment to building better software
+                    starts with these principles.
+                </p>
+
+                <div class="values-grid">
+
+                    <div class="value-card">
+
+                        <div class="value-icon">💡</div>
+
+                        <h3>Innovation</h3>
+
+                        <p>
+                            We explore new ideas and develop
+                            technology that solves real problems.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value-card">
+
+                        <div class="value-icon">🛡️</div>
+
+                        <h3>Reliability</h3>
+
+                        <p>
+                            We aim to create dependable software
+                            customers can trust.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value-card">
+
+                        <div class="value-icon">🤝</div>
+
+                        <h3>Customer Focus</h3>
+
+                        <p>
+                            We put customer needs at the center
+                            of our product development.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value-card">
+
+                        <div class="value-icon">📈</div>
+
+                        <h3>Growth</h3>
+
+                        <p>
+                            We continuously improve our products
+                            and embrace new opportunities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS SECTION -->
+
+        <section class="section products" id="products">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Our Software Products
+                </h2>
+
+                <p class="section-description">
+                    Discover software products developed by
+                    BluePeak Technologies to make everyday
+                    business operations easier.
+                </p>
+
+                <div class="product-grid">
+
+                    <!-- QUICK QUOTE -->
+
+                    <div class="product-card">
+
+                        <div class="product-icon">📄</div>
+
+                        <span class="product-status">
+                            First Product
+                        </span>
+
+                        <h3>Quick Quote</h3>
+
+                        <p>
+                            A simple quotation and invoice
+                            generator designed to help small
+                            businesses create professional
+                            business documents.
+                        </p>
+
+                        <!-- Replace # with your actual product URL -->
+
+                        <a href="#contact" class="button">
+                            Learn More
+                        </a>
+
+                    </div>
+
+
+                    <!-- FUTURE PRODUCT -->
+
+                    <div class="product-card">
+
+                        <div class="product-icon">💻</div>
+
+                        <span class="product-status">
+                            In Development
+                        </span>
+
+                        <h3>Future Products</h3>
+
+                        <p>
+                            BluePeak Technologies is continually
+                            exploring new software ideas and
+                            developing digital solutions for
+                            tomorrow's challenges.
+                        </p>
+
+                        <a href="#contact" class="button">
+                            Stay Connected
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRICING SECTION -->
+
+        <section class="section" id="pricing">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Simple and Practical Software
+                </h2>
+
+                <p class="section-description">
+                    Our goal is to develop useful software
+                    with pricing that makes sense for
+                    the people and businesses we serve.
+                </p>
+
+                <div class="pricing-card">
+
+                    <h3>Software for Everyone</h3>
+
+                    <p>
+                        We are working toward making
+                        BluePeak products accessible
+                        to businesses of all sizes.
+
+                        Product features and pricing
+                        will be announced as products
+                        become available.
+                    </p>
+
+                    <br>
+
+                    <a href="#contact" class="button">
+                        Contact BluePeak
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUPPORT SECTION -->
+
+        <section class="section support" id="support">
+
+            <div class="container support-content">
+
+                <h2 class="section-title">
+                    Customer Support
+                </h2>
+
+                <p>
+                    We believe great software deserves
+                    great support.
+
+                    BluePeak Technologies is committed
+                    to helping customers get the most
+                    out of our products.
+                </p>
+
+                <a href="#contact" class="button">
+                    Get in Touch
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+
+        <section class="section contact" id="contact">
+
+            <div class="container contact-content">
+
+                <h2 class="section-title">
+                    Contact BluePeak
+                </h2>
+
+                <p>
+                    Interested in our software products?
+                    Have a business inquiry or question?
+
+                    We would love to hear from you.
+                </p>
+
+                <!-- Replace this address with your real email -->
+
+                <a href="mailto:YOUR_EMAIL@example.com"
+                   class="button">
+                    Email BluePeak Technologies
+                </a>
+
+                <p style="margin-top: 20px;">
+                    We look forward to connecting with you.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            BLUEPEAK TECHNOLOGIES
+        </div>
+
+        <p>
+            Innovative Solutions. Higher Possibilities.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            BluePeak Technologies.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Mobile navigation menu
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = mainNav.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+
+        // Close menu after selecting a navigation link
+
+        document.querySelectorAll("#mainNav a").forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuToggle.textContent = "☰";
+
+            });
+
+        });
+
+
+        // Automatically update copyright year
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
 </html>
