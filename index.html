@@ -93,15 +93,32 @@
 .logo {
     display: flex;
     align-items: center;
+    gap: 12px;
     text-decoration: none;
 }
 
 .logo-image {
-    height: 75px;
-    width: auto;
-    max-width: 280px;
+    height: 55px;
+    width: 55px;
     object-fit: contain;
-    display: block;
+}
+
+.logo span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo strong {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.logo small {
+    color: #39a9ff;
+    font-size: 11px;
+    letter-spacing: 3px;
 }
 
         nav {
@@ -499,9 +516,14 @@
     <header>
 
         <a href="#home" class="logo">
-    <img src="bluepeak-logo.png"
-         alt="BluePeak Technologies"
+    <img src="./bluepeak-logo.png"
+         alt="BluePeak Logo"
          class="logo-image">
+
+    <span>
+        <strong>BLUEPEAK</strong>
+        <small>TECHNOLOGIES</small>
+    </span>
 </a>
 
         <button class="menu-toggle"
